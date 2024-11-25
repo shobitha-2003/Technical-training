@@ -1,0 +1,47 @@
+import java.util.Scanner;
+
+public class checkerBoard {
+    public static void main(String[] args) {
+        
+        Scanner sc = new Scanner(System.in);
+        System.out.println("Enter the value of Number");
+        int num = sc.nextInt();
+        int count = 0;
+        int number = 2;
+        for(int i=1;i<=num*num;i++){
+            boolean value=true;
+            if(i%2==0){
+                System.out.print("-");
+            }else{
+                while(value){
+                boolean ans = PrimeCheck(number);
+                if(ans){
+                System.out.print(number);
+                value = false;
+                }
+                number++;
+                }
+
+            }
+            if(i%num==0){
+                System.out.println();
+            }
+        }
+            
+}
+    public static boolean PrimeCheck(int number){
+        
+            if(number==2 || number == 3){
+                return true;
+            }
+            else{
+            for(int j=2;j<=number/2;j++){
+                if(number%j==0){
+                    return false;
+                }
+            }
+        }
+        return true;
+    }
+    
+}
